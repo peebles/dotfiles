@@ -1,0 +1,13 @@
+function json() {
+  python3 -m json.tool
+}
+function stack_output() {
+  local profile="$1"
+  local stack_name="$2"
+  local name="$3"
+  AWS_PROFILE=$profile aws cloudformation describe-stacks \
+    --stack-name $stack_name --query 'Stacks[0].Outputs' --output text | grep $name | awk '{print $2}'
+}
+
+alias more='less'
+alias deepclean='find . -name "*~" -exec rm -f {} \;'

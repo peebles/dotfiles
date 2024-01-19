@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bashrc: bashrc
+    ~/.aliases: aliases
+    ~/.gitconfig: gitconfig
+    ~/bin:
+        path: bin/
+        create: true
+    ~/.emacs: emacs
+    ~/.emacs.d:
+        path: emacs.d
+        create: true
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  
