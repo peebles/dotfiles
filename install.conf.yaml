@@ -5,9 +5,7 @@
 - clean: ['~']
 
 - link:
-    ~/.bashrc: bashrc
-    ~/.aliases: aliases
-    ~/.gitconfig: gitconfig
+    ~/.bash_aliases: bash_aliases
     ~/bin:
         path: bin/
         create: true

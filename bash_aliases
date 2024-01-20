@@ -11,3 +11,12 @@ function stack_output() {
 
 alias more='less'
 alias deepclean='find . -name "*~" -exec rm -f {} \;'
+alias ll='ls -alF'
+
+# aws cli completer
+if [ -f "/usr/local/bin/aws_completer" ]; then
+    complete -C '/usr/local/bin/aws_completer' aws
+fi
+
+# Suppress annoying aws-sdk deprication warnings
+export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
